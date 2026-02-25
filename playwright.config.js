@@ -5,13 +5,13 @@ module.exports = defineConfig({
     fullyParallel: true,
     retries: 1,
     use: {
-        practicesiteURL: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',
+        herokuappURL: 'https://the-internet.herokuapp.com/login',
         browserName: 'chromium',
         headless: false,
         screenshot: 'on',
         video: 'on',
-        user_name: 'Admin',
-        pass_word: 'admin123',
+        user_name: 'tomsmith',
+        pass_word: 'SuperSecretPassword!',
         paraBankURL: 'https://parabank.parasoft.com/parabank/index.htm',
         username: 'aabbcddfffggg',
         password: 'abcdef1234'
