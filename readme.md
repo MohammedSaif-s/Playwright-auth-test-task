@@ -30,10 +30,6 @@ Test Scenarios:
     * Attempts login with invalid credentials
     * Validates error alert: "Invalid credentials"
 
-* Log Out Flow
-    * Uses logoutAndValidate() to handle logout across both Parabank and HRM sites
-    * Confirms return to login page after logout
-
 * Mobile-Friendly Testing:
 npx playwright test assignmentTask.spec.js --project="Mobile Chrome"
 npx playwright test assignmentTask.spec.js --project="Mobile Safari"
