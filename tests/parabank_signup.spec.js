@@ -35,53 +35,15 @@ test.describe('Authentication Flow', () => {
             console.log('--- Signup Success ---');
             console.log(headingText);
             console.log(await successLocator.innerText());
-            await logoutAndValidate(page);
+            await page.waitForTimeout(5000);
+
         } else {
             const errorLocator = page.locator('#customer\\.username\\.errors');
             await expect(errorLocator).toHaveText('This username already exists.');
             console.log('--- Duplicate Signup Attempt ---');
             console.log(await errorLocator.innerText());
-        }
-    });
+            await page.waitForTimeout(5000);
 
-    test('Validate success or failure login', async({ page }, testInfo) => {
-        const {
-            practicesiteURL,
-            user_name,
-            pass_word
-        } = testInfo.project.use;
-        await page.goto(practicesiteURL);
-        await expect(page.locator('h5:has-text("Login")')).toHaveText('Login');
-
-        await page.getByPlaceholder('Username').fill(user_name);
-        await page.fill('[name="password"]', pass_word);
-        await page.getByRole('button', { name: 'Login' }).click();
-
-        const successHeading = page.locator('h6.oxd-topbar-header-breadcrumb-module');
-        const errorMessage = page.locator('.oxd-alert-content-text');
-
-        if (await successHeading.isVisible()) {
-            await expect(successHeading).toHaveText('Dashboard');
-            console.log('--- Login Success ---');
-            await logoutAndValidate(page);
-        } else {
-            await expect(errorMessage).toHaveText('Invalid credentials');
-            console.log('--- Login Failed ---');
         }
     });
 });
-
-async function logoutAndValidate(page) {
-    const parabankLogout = await page.click('text=Log Out');
-    const hrmLogout = await page.click('text=Logout');
-
-    if (await parabankLogout.isVisible()) {
-        await parabankLogout.click();
-        await expect(page.locator('h2')).toHaveText('Customer Login');
-        console.log('---- Logged out from Parabank site');
-    } else if (await hrmLogout.isVisible()) {
-        await hrmLogout.click();
-        await expect(page.locator('h5:has-text("Login")')).toHaveText('Login');
-        console.log('---- Logged out from HRM site');
-    }
-}

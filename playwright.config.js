@@ -10,10 +10,10 @@ module.exports = defineConfig({
         headless: false,
         screenshot: 'on',
         video: 'on',
-        user_name: 'Aadmin',
+        user_name: 'Admin',
         pass_word: 'admin123',
         paraBankURL: 'https://parabank.parasoft.com/parabank/index.htm',
-        username: 'aabbcddfggg',
+        username: 'aabbcddfffggg',
         password: 'abcdef1234'
     },
     projects: [{
