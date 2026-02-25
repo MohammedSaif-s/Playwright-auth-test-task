@@ -35,15 +35,11 @@ test.describe('Authentication Flow', () => {
             console.log('--- Signup Success ---');
             console.log(headingText);
             console.log(await successLocator.innerText());
-            await page.waitForTimeout(5000);
-
         } else {
             const errorLocator = page.locator('#customer\\.username\\.errors');
             await expect(errorLocator).toHaveText('This username already exists.');
             console.log('--- Duplicate Signup Attempt ---');
             console.log(await errorLocator.innerText());
-            await page.waitForTimeout(5000);
-
         }
     });
 });
