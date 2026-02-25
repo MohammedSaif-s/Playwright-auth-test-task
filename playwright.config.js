@@ -25,8 +25,8 @@ module.exports = defineConfig({
             use: { browserName: 'firefox' }
         },
         {
-            name: 'WebKit',
-            use: { browserName: 'webkit' }
+            name: 'Edge',
+            use: { channel: 'msedge' }
         },
         { name: 'Mobile Safari', use: {...devices['iPhone 12'] } },
         { name: 'Mobile Chrome', use: {...devices['Pixel 5'] } },

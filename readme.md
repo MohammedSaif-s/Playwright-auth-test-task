@@ -6,7 +6,7 @@ Goal:
 
 Configuration:
 * Centralized test data and URLs in playwright.config.js
-* Configured multiple browsers (Chromium, Firefox, WebKit) for cross-browser validation
+* Configured multiple browsers (Chromium, Firefox, Edge) for cross-browser validation
 * Configured mobile devices: Pixel 5 (Mobile Chrome) and iPhone 12 (Mobile Safari)
 * Retry mechanism added for flaky tests
 * Screenshots and video recording enabled (screenshot: 'on', video: 'on') for debugging and demo purposes
