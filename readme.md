@@ -17,7 +17,6 @@ Test Scenarios:
     * Fills out user details and submits form
     * Validates success message and auto-login
     * Handles duplicate signup attempts (This username already exists.)
-    * Logs out and confirms return to login page
 
 * Valid Sign In Flow
     * Navigates to login page
